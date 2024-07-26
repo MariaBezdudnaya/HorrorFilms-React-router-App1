@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# HorrorFilms-React-router-App1
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
 
-## Available Scripts
+В данном проекте представлено приложение для поиска и просмотра информации о современных фильмах ужасов. В проекте настроен роутинг между страницами, а также добавлено меню навигации (компонент "MainNavigation"), в котором активный пункт меню подсвечивается. 
 
-In the project directory, you can run:
+Меню навигации содержит переходы на главную страницу (компонент "HomePage"), страницу с информацией о приложении (компонент "AboutPage") и страницу со списком фильмов (компонент "FilmsPage"). Также с домашней страницы можно перейти на страницу со списком фильмов, нажав на кнопку (компонент "LinkButton"). 
 
-### `npm start`
+На странице со списком фильмов имеется поисковая строка для поиска фильма по названию, состояние которой зависит от поисковых параметров (search params). Если фильм не найден, отображается сообщение об его отсутствии в списке.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+При нажатии на название карточки фильма (компонент "FilmCard") открывается компонент с подробным описанием фильма (компонент "FilmDetailsPage"). В этом компоненте есть кнопка "Start showing", по которой происходит переход к заполнению формы, а также вкладками (компонент "Tabs") с информацией о режиссёре (компонент "FilmDirector") и отзывом о фильме (компонент "FilmCritics").
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+При переходе к заполнению формы (компонент "StartShowPage") необходимо ввести своё имя, указание еmail не является обязательным. В случае ошибки валидации (например, отсутствие данных в поле name или некорректный формат email) возникает сообщение об ошибке. При нажатии на кнопку "Start Showing" отображается alert с приветствием "зарегистрированного" пользователя и названием выбранного фильма, которое передаётся через id. 
 
-### `npm test`
+Далее происходит переход на страницу с названием фильма, его описанием, видео с официальным трейлером и ссылкой на поиск фильма в Google, куда также передаётся его id.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+При загрузке страницы со списком фильмов, вкладок Tabs, а также страницы с просмотром трейлера отображается индикатор загрузки Loder в виде вращающегося колёсика. В случее, если страница не найдена происходит переход на страницу с ошибкой (компонент "ErrorPage").
 
-### `npm run build`
+В данном приложении планирую настроить адаптацию под мобильные устройства, а также пополнить его список новыми фильмами. В моих репозиториях можно также найти вариант с другим дизайном: <https://github.com/MariaBezdudnaya/HorrorFilms-React-router-App>.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Технологии
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+В данном проекте используются React + JavaScript. Для использования видео-ролика использован react-player, установленный с помощью команды `npm install react-player`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Как использовать
 
-### `npm run eject`
+Чтобы посмотреть, как работает проект, вы можете перейти по ссылке <https://mariabezdudnaya.github.io/HorrorFilms-React-router-App1/> на GitHub Pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Также вы можете скачать себе этот репозиторий любым понравившимся способом, открыть его в IDE. Требуются установленные версии Node.js, npm, git.
+Приложение должно быть запущено с помощью `npm start` после выполнения `npm install` для установки всех зависимостей.
